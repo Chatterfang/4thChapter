@@ -23,15 +23,27 @@ class AStarGUI:
         #display
         self.map_frame = self.create_map_frame()
 
+        #TODO: figure out how to draw inside of the map frame (draw squares/grid
+
+        # check to see the dimensions of map frame
+        self.square_label = self.create_square_label()
+        #--------------
+
         #buttons
         self.button_frame = self.create_button_frame()
         self.create_buttons()
         self.button_frame.rowconfigure(0, weight=1)
 
+    # DISPLAY SECTION
     def create_map_frame(self):
         frame = tk.Frame(self.window, height=500, bg='#FFFFFF')
         frame.pack(expand=True, fill='x')
         return frame
+
+    def create_square_label(self):
+        label = tk.Label(self.map_frame, text='kek', bg='#B00B69')
+        label.pack()
+        return label
 
     # BUTTONS SECTION
     #TODO: add methods to create control buttons (next/previous step, restart)
